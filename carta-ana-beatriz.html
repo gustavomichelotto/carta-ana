@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Para Ana Beatriz Thomazi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --marrom-escuro:#3E2723;
+    --marrom:#5D4037;
+    --marrom-claro:#8D6E63;
+    --marrom-fundo:#2C1E16;
+    --creme:#FFF8E9;
+    --creme-2:#FDF0C9;
+    --amarelo:#FFC93C;
+    --amarelo-claro:#FFDF8A;
+    --amarelo-suave:#FFF3C4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',sans-serif;
+    background:var(--creme);
+    color:var(--marrom-escuro);
+    line-height:1.9;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+  /* Hero */
+  .hero{
+    min-height:100vh;
+    min-height:100svh;
+    background: radial-gradient(ellipse at 50% 30%, #6D4C41 0%, var(--marrom-fundo) 65%),
+                linear-gradient(180deg, var(--marrom-fundo), #3E2723);
+    color:var(--creme);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:3rem 1.5rem 5rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(255,201,60,.18) 0%, transparent 70%);
+    top:-150px;left:50%;transform:translateX(-50%);
+    pointer-events:none;
+  }
+  .stars{position:absolute;inset:0;pointer-events:none}
+  .star{position:absolute;width:3px;height:3px;background:var(--amarelo-claro);border-radius:50%;opacity:.6;animation:twinkle 3s infinite ease-in-out}
+  @keyframes twinkle{0%,100%{opacity:.2}50%{opacity:.9}}
+  .envelope{
+    font-size:3rem;margin-bottom:1rem;
+    animation:float 3s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .hero small{
+    letter-spacing:.35em;text-transform:uppercase;
+    color:var(--amarelo);
+    font-size:.75rem;font-weight:600;
+  }
+  .hero h1{
+    font-size:clamp(2.8rem,7vw,5rem);
+    font-weight:500;margin:1rem 0 .5rem;
+    line-height:1.1;
+  }
+  .hero h1 em{color:var(--amarelo);font-style:italic}
+  .hero p.sub{
+    max-width:560px;color:#D7CCC8;font-weight:300;font-size:1.1rem;margin-top:1rem;
+  }
+  .divider{display:flex;align-items:center;gap:12px;margin:1.8rem auto;justify-content:center}
+  .divider span.line{width:60px;height:1px;background:var(--amarelo);opacity:.7}
+  .divider span.heart{color:var(--amarelo);font-size:1.2rem}
+  .btn-scroll{
+    margin-top:2rem;
+    border:1px solid var(--amarelo);
+    color:var(--amarelo);
+    padding:.9rem 2.2rem;border-radius:100px;
+    text-decoration:none;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;
+    transition:.3s;
+    background:transparent;cursor:pointer;
+  }
+  .btn-scroll:hover{background:var(--amarelo);color:var(--marrom-escuro)}
+  .scroll-hint{margin-top:1.2rem;font-size:.8rem;color:#A1887F;letter-spacing:.15em}
+  /* Carta */
+  .carta{
+    max-width:760px;margin:-3rem auto 0;
+    background:#fffdf6;
+    border-radius:18px;
+    padding:clamp(1.6rem,5vw,4rem);
+    box-shadow:0 20px 60px rgba(62,39,35,.18);
+    position:relative;z-index:2;
+    border-top:5px solid var(--amarelo);
+    scroll-margin-top:1rem;
+  }
+  .carta-top{text-align:center;margin-bottom:2rem}
+  .carta-top .data{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--marrom-claro)}
+  .carta-top h2{font-size:2.2rem;margin:.5rem 0;font-weight:600}
+  .carta p{margin-bottom:1.5rem;font-size:1.07rem;color:#4E342E;font-weight:300}
+  .carta p strong{font-weight:600;color:var(--marrom-escuro)}
+  .carta p.destaque{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.45rem;line-height:1.6;
+    color:var(--marrom);
+    border-left:3px solid var(--amarelo);
+    padding-left:1.2rem;margin:2.2rem 0;
+    font-style:italic;
+    background:var(--amarelo-suave);
+    padding-top:.8rem;padding-bottom:.8rem;padding-right:1rem;
+    border-radius:0 12px 12px 0;
+  }
+  .mini-card{
+    background:var(--marrom-escuro);
+    color:var(--creme);
+    border-radius:14px;
+    padding:1.8rem;
+    margin:2rem 0;
+    position:relative;overflow:hidden;
+  }
+  .mini-card::after{
+    content:'❤';
+    position:absolute;right:15px;bottom:0;
+    font-size:6rem;opacity:.07;
+  }
+  .mini-card h3{color:var(--amarelo);font-size:1.6rem;margin-bottom:.6rem}
+  .mini-card p{color:#EFEBE9;font-size:1rem;margin:0}
+  .alarme{
+    background:var(--creme-2);
+    border:1px dashed var(--marrom-claro);
+    border-radius:12px;padding:1.2rem 1.4rem;
+    font-size:.98rem;margin:1.8rem 0;
+  }
+  /* Secoes */
+  .secao-faixa{
+    background:linear-gradient(135deg, var(--marrom-escuro), #6D4C41);
+    color:var(--creme);
+    text-align:center;
+    padding:4rem 1.5rem;
+    margin:4rem 0;
+    position:relative;
+  }
+  .secao-faixa h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:500}
+  .secao-faixa h2 em{color:var(--amarelo)}
+  .secao-faixa p{max-width:620px;margin:1rem auto 0;color:#D7CCC8}
+  /* grade motivos */
+  .motivos{max-width:900px;margin:0 auto;padding:0 1.5rem 3rem}
+  .motivos h2{text-align:center;font-size:2.2rem;margin-bottom:.5rem}
+  .motivos p.intro{text-align:center;color:var(--marrom-claro);margin-bottom:2rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+  .motivo{
+    background:#fffdf6;border-radius:14px;padding:1.6rem;
+    border:1px solid #EADDC0;
+    box-shadow:0 8px 24px rgba(62,39,35,.07);
+    transition:.3s;
+  }
+  .motivo:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(62,39,35,.14)}
+  .motivo .ico{font-size:1.8rem;margin-bottom:.5rem}
+  .motivo h3{font-size:1.35rem;margin-bottom:.4rem}
+  .motivo p{font-size:.97rem;color:#6D4C41}
+  /* final */
+  .final{
+    max-width:760px;margin:0 auto 4rem;
+    background:var(--marrom-escuro);
+    color:var(--creme);
+    border-radius:18px;
+    padding:clamp(2rem,5vw,3.5rem);
+    text-align:center;
+    box-shadow:0 20px 60px rgba(62,39,35,.3);
+    position:relative;overflow:hidden;
+  }
+  .final::before{
+    content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+    width:400px;height:200px;background:radial-gradient(ellipse, rgba(255,201,60,.22), transparent 70%);
+  }
+  .aliancas{font-size:3rem;margin-bottom:1rem}
+  .final h2{font-size:2.3rem;margin-bottom:1rem}
+  .final h2 em{color:var(--amarelo)}
+  .final p{color:#D7CCC8;margin-bottom:1.2rem}
+  .final .assinatura{
+    margin-top:2rem;font-family:'Cormorant Garamond',serif;
+    font-size:1.8rem;color:var(--amarelo);font-style:italic;
+  }
+  .final .para{margin-top:.5rem;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:#A1887F}
+  footer{text-align:center;padding:2rem 1rem 3rem;color:var(--marrom-claro);font-size:.9rem}
+  footer .coracao{color:#c62828}
+  /* reveal: só esconde se o JS estiver funcionando (sem JS, tudo aparece) */
+  .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+  .js .reveal.visivel{opacity:1;transform:none}
+  /* coracoes flutuantes */
+  .float-heart{position:fixed;bottom:-30px;font-size:1.4rem;pointer-events:none;animation:subir linear forwards;z-index:10;opacity:.8}
+  @keyframes subir{to{transform:translateY(-110vh) rotate(20deg);opacity:0}}
+  @media(max-width:600px){
+    .carta{margin:-2rem 1rem 0}
+    .final{margin:0 1rem 3rem}
+    .carta-top h2{font-size:1.8rem}
+    .carta p.destaque{font-size:1.25rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="envelope">💌</div>
+  <small>Se você abriu isso...</small>
+  <h1>Para <em>Ana Beatriz<br>Thomazi</em></h1>
+  <div class="divider"><span class="line"></span><span class="heart">❤</span><span class="line"></span></div>
+  <p class="sub">É porque você ainda sente, acredita ou confia em mim.<br>E eu precisava que você soubesse tudo que estou sentindo.</p>
+  <a class="btn-scroll" id="btnAbrir" href="#carta">Abrir meu coração</a>
+  <div class="scroll-hint">feito à mão, com amor — role para ler</div>
+</div>
+
+<!-- A carta NÃO usa "reveal": ela é muito alta no celular e o efeito nunca disparava (tela branca) -->
+<main id="carta" class="carta">
+  <div class="carta-top">
+    <div class="data">16 · 10 · 2026 — um dos dias mais difíceis</div>
+    <h2>Eu precisava expor meu lado</h2>
+    <div class="divider"><span class="line"></span><span class="heart">❤</span><span class="line"></span></div>
+  </div>
+
+  <p>Desculpa por algumas brincadeiras. Algumas eu parei, mas <strong>não sabia que uma em específico te machucava tanto</strong>. Você não está gorda. Desculpa por apertar sua barriga.</p>
+
+  <p>Mudança leva tempo. Não estou te pedindo para esperar comigo esse tempo, mas <strong>haverá mudança</strong>.</p>
+
+  <p class="destaque">“Eu tenho para mim que o amor é uma escolha. É escolher estar com a pessoa todos os dias, escolher confiar nela.”</p>
+
+  <p>Sei que já me deu muitos votos de confiança e não acredita que a mudança vai vir agora, mas é aí que o amor entra.</p>
+
+  <p>Sei que não é o suficiente para reparar tudo, e sei que muitas coisas não têm reparo, mas eu quero que você saiba tudo que eu estou sentindo e tudo que você representa.</p>
+
+  <p><strong>Fiz isso para te mostrar o quanto você é importante.</strong></p>
+
+  <p>Se você abriu isso é porque ainda sente, acredita ou confia em mim.</p>
+
+  <p>Eu te amo mais do que parece. Não quero que isso seja um site extremamente elaborado, só quero poder abrir meu coração e mostrar tudo que estou sentindo.</p>
+
+  <p>Eu pensei muito no que aconteceu e vi que foram <strong>pequenas coisas</strong> que nos levaram a isso.</p>
+
+  <div class="mini-card reveal">
+    <h3>Sobre o jogo...</h3>
+    <p>Tem uma coisa que eu nunca te contei: eu enrolava para jogar porque eu preferia ficar abraçado e coladinho quando estava aqui. Quando estávamos perto, eu preferia aproveitar nosso tempo juntos fora das telas. É uma coisa que eu deveria ter falado, mas não sei por que não saiu. Eu preferia só pedir desculpas.</p>
+  </div>
+
+  <p>Fiquei pensando todo esse tempo: <strong>eu amo seu jeito, eu amo ele, amo muito.</strong> Muitas vezes eu falei que é difícil, e muitas vezes é, mas eu gosto. Você é perfeita da sua maneira.</p>
+
+  <p>Eu nunca quis te colocar em um pedestal, mas acabei fazendo isso. Eu pensava que você era perfeita — perfeita que eu digo de não errar — mas ninguém é perfeito. Para mim você era, mas eu não parava de te cobrar e exigir.</p>
+
+  <p>Eu não vou me justificar por nada, mas desde pequeno sempre fui ruim de conversa. Minha mãe mesmo falou que quando eu fico triste eu fico mudo e quando eu fico grosso eu fico estúpido.</p>
+
+  <p class="destaque">Como te disse, estou disposto e vou mudar. Eu não disse nada da boca para fora.</p>
+
+  <div class="mini-card reveal">
+    <h3>Sobre ciúmes...</h3>
+    <p>Eu sei que o ciúme atrapalha e que isso não é saudável. Eu pensei sobre seus amigos e sobre eles quererem me conhecer, e <strong>eu realmente estou disposto a dar uma chance</strong>. Eu sei que não fui legal e que fui bem babaca — mas, como eu disse, eu quero mudar. Tirando um em específico, que você sabe qual é.</p>
+  </div>
+
+  <p>Eu queria muito que você pudesse ver de verdade o que eu estou sentindo. Queria muito que você pudesse ver por dentro do meu peito.</p>
+
+  <p>Eu queria poder falar tudo que eu quero para você. Queria poder ter 5 minutos sem trava — na verdade, precisaria de mais.</p>
+
+  <p>Quando estou com você vem um turbilhão de emoções, por isso estou escrevendo. E mesmo assim acho que não vai sair tudo que eu quero.</p>
+
+  <p>Eu sempre soube que você era a mulher da minha vida. Não sei se achava ou acha isso de mim, mas <strong>eu quero me casar com você</strong>. Eu quero que você entenda que pode ser diferente. Eu quero que, pela última vez, você escolha acreditar na gente, acreditar em mim.</p>
+
+  <div class="alarme reveal">
+    ⏰ <strong>Sobre perguntar do seu dia:</strong> é algo básico, mas que muitas vezes eu não fazia por N motivos. Depois que você falou isso, eu coloquei um alarme para não esquecer mais — coloquei para assim que eu chegasse em casa o alarme notificar para eu perguntar.<br><br>
+    <em>(Meu alarme para o seu dia acabou de tocar enquanto eu escrevia isso)</em>
+  </div>
+
+  <p>Eu sei que por muitas vezes eu fui idiota, e fui mais idiota ainda em não perceber isso. Eu realmente tentei mudar muitas vezes, mas tem coisas que são realmente mais difíceis que as outras. Mas tem muitas coisas que eu já te mostrei que posso mudar.</p>
+
+  <p>Não comecei a escrever isso agora, fui escrevendo ao longo do dia. Eu queria que isso mostrasse um pedaço de mim que muitas vezes eu não te mostrei ou você não viu.</p>
+
+  <p class="destaque">“Se a gente terminar eu tenho certeza que não vou achar ninguém melhor que você.” E ninguém igual, porque também já te disse várias vezes.</p>
+
+  <p>Você sempre me pediu para te ouvir mais e pensar mais sobre as coisas que você me falava. Isso é minha resposta para o seu pedido. Eu realmente pensei em tudo e refleti. Hoje, dia 16/10/2026, foi um dos dias mais difíceis para mim. Eu senti muita vontade de te mandar mensagem, mas eu prometi que te daria um tempo.</p>
+
+  <p>Eu acredito em uma coisa: <strong>nosso A.G.P.S. é mais forte do que tudo</strong> e eu acho que podemos passar por qualquer coisa juntos.</p>
+
+  <p>Eu acho que um dos principais problemas que a gente teve nunca foi falta de amor, nem falta de tentativa. Foi a falta de comunicação — inclusive na nossa última briga. E de verdade, eu estou disposto a deixar todos os desgastes para trás e voltar a usar uma aliança com você. Mas o namoro é uma via de mão dupla, e eu não vou te forçar a nada.</p>
+
+  <p>Muito provavelmente, enquanto você lê isso, eu estou mudo te olhando, ou do seu lado. Eu quero que saiba que isso não é uma tentativa de mudar a sua opinião, mas é algo que eu senti que precisava fazer. Eu precisava expor meu lado. Aqui eu tentei falar coisas que eu nunca falei e eu tentei falar tudo que eu sentia.</p>
+
+  <p>Eu não quis fazer em forma de texto. Ao invés disso, preferi colocar isso em uma coisa que eu realmente gosto e sou bom fazendo.</p>
+
+  <p><strong>Caso tenha aberto, muito obrigado por ler até aqui. Eu te amo.</strong></p>
+</main>
+
+<div class="secao-faixa reveal">
+  <h2>O amor é uma <em>escolha</em></h2>
+  <p>Escolher estar com a pessoa todos os dias. Escolher confiar nela.<br>Hoje, eu escolho você. Amanhã, eu escolho você de novo.</p>
+  <div class="divider"><span class="line"></span><span class="heart">💛</span><span class="line"></span></div>
+</div>
+
+<section class="motivos">
+  <h2 class="serif reveal">Tudo que você representa</h2>
+  <p class="intro reveal">Pequenos pedaços do que eu sinto — e que nem sempre soube dizer.</p>
+  <div class="grid">
+    <div class="motivo reveal"><div class="ico">🤎</div><h3 class="serif">Seu jeito</h3><p>Eu amo seu jeito. É difícil às vezes, mas eu gosto. Você é perfeita da sua maneira.</p></div>
+    <div class="motivo reveal"><div class="ico">🤗</div><h3 class="serif">Ficar coladinho</h3><p>Eu sempre preferi o abraço do que a tela. Perto de você, o melhor lugar é colado em você.</p></div>
+    <div class="motivo reveal"><div class="ico">💛</div><h3 class="serif">Ninguém igual</h3><p>Tenho certeza que não vou achar ninguém melhor que você. E ninguém igual.</p></div>
+    <div class="motivo reveal"><div class="ico">💍</div><h3 class="serif">Aliança</h3><p>Quero deixar os desgastes para trás e voltar a usar uma aliança com você.</p></div>
+    <div class="motivo reveal"><div class="ico">✨</div><h3 class="serif">A.G.P.S.</h3><p>Nosso A.G.P.S. é mais forte do que tudo. Podemos passar por qualquer coisa juntos.</p></div>
+    <div class="motivo reveal"><div class="ico">👂</div><h3 class="serif">Ouvir mais</h3><p>Você me pediu para ouvir mais e pensar mais. Essa página é minha resposta. Eu refleti de verdade.</p></div>
+  </div>
+</section>
+
+<div class="final reveal">
+  <div class="aliancas">💍🤎💛</div>
+  <h2>Eu quero me casar <em>com você</em></h2>
+  <p>Eu sempre soube que você era a mulher da minha vida.<br>Eu quero que, pela última vez, você escolha acreditar na gente, acreditar em mim.</p>
+  <p>Isso não é uma tentativa de mudar sua opinião.<br>É só meu coração aberto, por dentro do meu peito, como eu sempre quis que você visse.</p>
+  <div class="divider"><span class="line"></span><span class="heart">❤</span><span class="line"></span></div>
+  <div class="assinatura">Eu te amo.</div>
+  <div class="para">Para: Ana Beatriz Thomazi</div>
+</div>
+
+<footer>
+  feito com <span class="coracao">❤</span> em marrom &amp; amarelo — porque mudança leva tempo, mas o amor escolhe ficar
+</footer>
+
+<script>
+  // estrelas
+  try{
+    var stars = document.getElementById('stars');
+    for(var i=0;i<60;i++){
+      var s=document.createElement('div');
+      s.className='star';
+      s.style.left=Math.random()*100+'%';
+      s.style.top=Math.random()*100+'%';
+      s.style.animationDelay=(Math.random()*3)+'s';
+      s.style.width=s.style.height=(Math.random()*2+1.5)+'px';
+      stars.appendChild(s);
+    }
+  }catch(e){}
+
+  // botão: rolagem suave até a carta
+  document.getElementById('btnAbrir').addEventListener('click', function(ev){
+    ev.preventDefault();
+    var alvo = document.getElementById('carta');
+    try{ alvo.scrollIntoView({behavior:'smooth', block:'start'}); }
+    catch(e){ window.location.hash = '#carta'; }
+  });
+
+  // reveal ao rolar (threshold 0 = aparece assim que qualquer pedaço entra na tela)
+  var els = document.querySelectorAll('.reveal');
+  function mostrarTudo(){ els.forEach(function(el){ el.classList.add('visivel'); }); }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visivel'); io.unobserve(e.target); }
+      });
+    },{threshold:0, rootMargin:'0px 0px -5% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+    // garantia: se algo não aparecer em 6s, mostra tudo
+    setTimeout(mostrarTudo, 6000);
+  } else {
+    mostrarTudo();
+  }
+
+  // coracoes flutuantes
+  var emojis=['🤎','💛','❤️','💌'];
+  setInterval(function(){
+    var h=document.createElement('div');
+    h.className='float-heart';
+    h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    h.style.left=Math.random()*90+'vw';
+    h.style.fontSize=(Math.random()*1+1)+'rem';
+    h.style.animationDuration=(Math.random()*3+5)+'s';
+    document.body.appendChild(h);
+    setTimeout(function(){ h.remove(); },8000);
+  },3500);
+</script>
+</body>
+</html>
